@@ -1,6 +1,6 @@
 from plover import log
 from PySide6.QtWidgets import QWidget
-from PySide6.QtCore import QByteArray, Qt, QRect, QPoint
+from PySide6.QtCore import QByteArray, Qt
 from PySide6.QtSvgWidgets import QSvgWidget
 
 from typing import List
@@ -56,7 +56,6 @@ class LayoutWidget(QSvgWidget):
             )
 
             self.resize(new_size)
-            self.renderer().setViewBox(QRect(QPoint(0, 0), new_size))
             self.svg_size = new_size
             self.is_invalid = invalid
         except Exception as e:
