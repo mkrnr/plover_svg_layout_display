@@ -14,9 +14,12 @@ class SVGParser:
     
     __slots__ = ["group_svgs", "svg_attribs", "svg_raw"]
 
-    def load_file(self, path: str) -> List[str]:
+    def load_file(self, path: str) -> None:
+        self.load_string(load_qt_text(path))
+
+    def load_string(self, svg_text: str) -> None:
         parser = ET.XMLParser(recover=True)
-        self.svg_raw = load_qt_text(path)
+        self.svg_raw = svg_text
         tree = ET.fromstring(self.svg_raw.encode("utf-8"), parser)
 
         self.group_svgs: Dict[str, str] = {}

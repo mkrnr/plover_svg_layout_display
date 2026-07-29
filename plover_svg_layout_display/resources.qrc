@@ -3,6 +3,6 @@
     <file>resources/icon.svg</file>
     <file>resources/en_convert.py</file>
     <file>resources/en_layout.svg</file>
-    <file>resources/invalid.svg</file>
+    <file>resources/placeholder.svg</file>
   </qresource>
 </RCC>
