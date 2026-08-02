@@ -1,5 +1,4 @@
 exclude plover_svg_layout_display/*_rc.py
-exclude plover_svg_layout_display/*_ui.py
 include plover_svg_layout_display/*.ui
 include plover_svg_layout_display/*.qrc
 recursive-include plover_svg_layout_display/resources *

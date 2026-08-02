@@ -194,7 +194,11 @@ class SVGLayoutDisplayTool(Tool):
             if "system_svg" in sys_config:
                 svg_path = sys_config["system_svg"]
                 self.svg_widget.load_svg(
-                    svg_path, 
+                    svg_path,
+                    sys_config.get("system_scale", 100)
+                )
+            else:
+                self.svg_widget.load_unconfigured(
                     sys_config.get("system_scale", 100)
                 )
 
@@ -207,6 +211,7 @@ class SVGLayoutDisplayTool(Tool):
             self.load_py_script(DEFAULT_PY)
         else:
             log.error("No configuration found for system name: %s", self.system_name)
+            self.svg_widget.load_unconfigured()
         
         self.on_stroke(tuple())
 
